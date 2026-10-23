@@ -538,6 +538,141 @@
         flex-direction: column;
       }
     }
+
+/* ================================
+   IDEAS IN PROGRESS
+================================ */
+
+.ideas-progress {
+  background: #faf6f1;
+  padding: 90px 8%;
+  color: #302723;
+}
+
+.ideas-progress .ideas-eyebrow {
+  color: #bd817c;
+  text-transform: uppercase;
+  letter-spacing: 3px;
+  font-size: 11px;
+  font-weight: 600;
+  margin-bottom: 14px;
+}
+
+.ideas-progress .ideas-heading {
+  font-family: 'Playfair Display', Georgia, serif;
+  font-size: clamp(32px, 5vw, 48px);
+  font-weight: 400;
+  line-height: 1.2;
+  margin: 0 0 16px;
+}
+
+.ideas-progress .ideas-intro {
+  max-width: 600px;
+  color: #796c65;
+  font-size: 15px;
+  line-height: 1.8;
+  margin-bottom: 38px;
+}
+
+.ideas-progress .ideas-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 24px;
+}
+
+.ideas-progress .idea-card {
+  background: #fffdfb;
+  border: 1px solid #eaded4;
+  border-radius: 5px;
+  overflow: hidden;
+  transition: transform 0.25s ease,
+              box-shadow 0.25s ease;
+}
+
+.ideas-progress .idea-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 14px 35px rgba(48, 39, 35, 0.08);
+}
+
+.ideas-progress .idea-number {
+  font-size: 11px;
+  letter-spacing: 2px;
+  color: #bd817c;
+  margin-bottom: 14px;
+}
+
+.ideas-progress .idea-content {
+  padding: 26px;
+}
+
+.ideas-progress .idea-status {
+  display: inline-block;
+  background: #f1e5dd;
+  color: #855c55;
+  padding: 7px 10px;
+  border-radius: 30px;
+  font-size: 10px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  margin-bottom: 18px;
+}
+
+.ideas-progress .idea-title {
+  font-family: 'Playfair Display', Georgia, serif;
+  font-size: 25px;
+  font-weight: 400;
+  margin: 0 0 12px;
+}
+
+.ideas-progress .idea-description {
+  color: #796c65;
+  font-size: 13px;
+  line-height: 1.9;
+  margin: 0;
+}
+
+.ideas-progress .idea-type {
+  border-top: 1px solid #eaded4;
+  margin-top: 22px;
+  padding-top: 16px;
+  color: #9a8175;
+  font-size: 11px;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+}
+
+.ideas-progress .ideas-note {
+  margin-top: 30px;
+  color: #8a7970;
+  font-size: 12px;
+  line-height: 1.8;
+  font-style: italic;
+}
+
+@media (max-width: 850px) {
+  .ideas-progress {
+    padding: 65px 6%;
+  }
+
+  .ideas-progress .ideas-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 560px) {
+  .ideas-progress {
+    padding: 55px 6%;
+  }
+
+  .ideas-progress .ideas-grid {
+    grid-template-columns: 1fr;
+    gap: 18px;
+  }
+
+  .ideas-progress .idea-content {
+    padding: 24px;
+  }
+
   </style>
 </head>
 
@@ -833,47 +968,72 @@
       </div>
     </section>
 
-    <section id="portfolio">
-      <div class="container">
-        <div class="section-intro">
-          <p class="eyebrow">Selected work</p>
-          <h2>Ideas in progress.</h2>
-          <p>A growing collection of practice projects and website concepts.</p>
-        </div>
+    
+<!-- IDEAS IN PROGRESS -->
+<section class="ideas-progress" id="ideas">
+  <p class="ideas-eyebrow">The creative process</p>
 
-        <div class="portfolio-grid">
-          <article class="project">
-            <div class="project-visual">Personal Portfolio</div>
-            <h3>My portfolio</h3>
-            <p>A personal website to introduce my journey into tech.</p>
-            <div class="project-tag">Personal project</div>
-          </article>
+  <h2 class="ideas-heading">Ideas in Progress<span>.</span></h2>
 
-          <article class="project">
-            <div class="project-visual">Beauty & Care</div>
-            <h3>Beauty brand concept</h3>
-            <p>
-              A visual concept for a beauty business with an
-              elegant online presence.
-            </p>
-            <div class="project-tag">Design concept</div>
-          </article>
+  <p class="ideas-intro">
+    Every great website starts with an idea. Here are some concepts
+    I'm exploring as I grow my skills, experiment with design,
+    and create new digital experiences.
+  </p>
 
-          <article class="project">
-            <div class="project-visual">Small Business</div>
-            <h3>Business website concept</h3>
-            <p>
-              A simple concept showing how a small business
-              could present its services.
-            </p>
-            <div class="project-tag">Practice concept</div>
-          </article>
-        </div>
+  <div class="ideas-grid">
 
-        <p style="margin-top:22px;color:var(--muted);font-size:.85rem">
-          Concept projects are examples, not completed client work.
+    <!-- IDEA 01 -->
+    <article class="idea-card">
+      <div class="idea-content">
+        <p class="idea-number">01 / CONCEPT</p>
+        <span class="idea-status">In progress</span>
+        <h3 class="idea-title">Beauty &amp; Glow</h3>
+        <p class="idea-description">
+          A refined website concept for beauty businesses,
+          featuring service menus, pricing, and appointment enquiries.
         </p>
+        <p class="idea-type">Beauty · Wellness · Services</p>
       </div>
+    </article>
+
+    <!-- IDEA 02 -->
+    <article class="idea-card">
+      <div class="idea-content">
+        <p class="idea-number">02 / CONCEPT</p>
+        <span class="idea-status">Planning</span>
+        <h3 class="idea-title">The Nude Edit</h3>
+        <p class="idea-description">
+          A modern boutique concept with an elegant layout,
+          curated product collections, and a luxury-inspired feel.
+        </p>
+        <p class="idea-type">Fashion · Retail · E-commerce</p>
+      </div>
+    </article>
+
+    <!-- IDEA 03 -->
+    <article class="idea-card">
+      <div class="idea-content">
+        <p class="idea-number">03 / CONCEPT</p>
+        <span class="idea-status">Coming soon</span>
+        <h3 class="idea-title">The Perfect Plate</h3>
+        <p class="idea-description">
+          A welcoming catering website concept with menu highlights,
+          event packages, and an easy way for customers to enquire.
+        </p>
+        <p class="idea-type">Food · Catering · Events</p>
+      </div>
+    </article>
+
+  </div>
+
+  <p class="ideas-note">
+    These are developing concepts and creative explorations.
+    Each idea is a work in progress as I continue building my portfolio.
+  </p>
+</section>
+<!-- END IDEAS IN PROGRESS -->
+
     </section>
 
     <section id="contact">
