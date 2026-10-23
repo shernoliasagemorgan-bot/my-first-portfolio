@@ -1,11 +1,10 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="description" content="Shernolia creates thoughtful, elegant websites for individuals and small businesses.">
-  <meta name="theme-color" content="#faf6f1">
+  <meta name="theme-color" content="#F3E5D8">
 
   <title>Shernolia | Web Design & Development</title>
 
@@ -15,14 +14,14 @@
 
   <style>
     :root {
-      --cream: #faf6f1;
-      --nude: #eee1d6;
-      --rose: #b7837c;
-      --brown: #49372f;
-      --dark: #302723;
-      --muted: #796c64;
-      --white: #fffdfb;
-      --line: #e6d8ce;
+      --cream: #F3E5D8;
+      --nude: #F7B7CF;
+      --rose: #E98BB2;
+      --brown: #171414;
+      --dark: #171414;
+      --muted: #6F5B62;
+      --white: #FFF9FC;
+      --line: #EBC8D7;
     }
 
     * {
@@ -57,7 +56,7 @@
       position: sticky;
       top: 0;
       z-index: 10;
-      background: rgba(250, 246, 241, .96);
+      background: rgba(243, 229, 216, .96);
       backdrop-filter: blur(12px);
       border-bottom: 1px solid var(--line);
     }
@@ -122,7 +121,7 @@
       border-color: var(--rose);
     }
 
-    /* WELCOME SECTION WITH FLORAL LINE ART */
+    /* WELCOME SECTION */
 
     .hero {
       position: relative;
@@ -385,26 +384,27 @@
       margin-top: auto;
     }
 
+    /* PORTFOLIO IMAGES */
+
     .project-visual {
-      min-height: 150px;
-      border-radius: 8px;
+      height: 220px;
+      border-radius: 12px;
       margin-bottom: 18px;
-      background: linear-gradient(135deg, #e6d2c3, #b7837c);
-      display: grid;
-      place-items: center;
-      color: white;
-      font-family: "Playfair Display", serif;
-      font-size: 1.6rem;
-      text-align: center;
-      padding: 15px;
+      overflow: hidden;
+      background: linear-gradient(135deg, #F7B7CF, #F3E5D8 55%, #171414);
+      padding: 0;
     }
 
-    .project:nth-child(2) .project-visual {
-      background: linear-gradient(135deg, #d7c7b8, #8f7567);
+    .project-visual img {
+      width: 100%;
+      height: 100%;
+      display: block;
+      object-fit: cover;
+      transition: transform 0.4s ease;
     }
 
-    .project:nth-child(3) .project-visual {
-      background: linear-gradient(135deg, #e8ddd0, #c6a7a0);
+    .project:hover .project-visual img {
+      transform: scale(1.05);
     }
 
     .project-tag {
@@ -484,6 +484,8 @@
       }
     }
 
+    /* MOBILE RESPONSIVE DESIGN */
+
     @media (max-width: 760px) {
       nav {
         padding: 16px 0;
@@ -529,7 +531,8 @@
 
       .services-grid,
       .packages-grid,
-      .portfolio-grid {
+      .portfolio-grid,
+      .ideas-progress .ideas-grid {
         grid-template-columns: 1fr;
       }
 
@@ -537,6 +540,80 @@
         align-items: flex-start;
         flex-direction: column;
       }
+    }
+
+    /* IDEAS IN PROGRESS SECTION */
+
+    .ideas-progress {
+      background: var(--cream);
+      color: var(--dark);
+    }
+
+    .ideas-progress .ideas-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 20px;
+    }
+
+    .ideas-progress .idea-card {
+      background: var(--white);
+      border: 1px solid var(--line);
+      border-radius: 12px;
+      overflow: hidden;
+      transition: transform .25s, box-shadow .25s;
+    }
+
+    .ideas-progress .idea-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 15px 35px #49352a0c;
+    }
+
+    .ideas-progress .idea-content {
+      padding: 27px;
+    }
+
+    .ideas-progress .idea-number {
+      color: var(--rose);
+      font-size: .8rem;
+      letter-spacing: 2px;
+      margin-bottom: 15px;
+    }
+
+    .ideas-progress .idea-status {
+      display: inline-block;
+      background: var(--nude);
+      color: var(--brown);
+      border-radius: 50px;
+      padding: 6px 11px;
+      margin-bottom: 15px;
+      font-size: .72rem;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+    }
+
+    .ideas-progress .idea-card h3 {
+      margin-bottom: 12px;
+    }
+
+    .ideas-progress .idea-card p:not(.idea-number):not(.idea-type) {
+      color: var(--muted);
+      font-size: .92rem;
+    }
+
+    .ideas-progress .idea-type {
+      border-top: 1px solid var(--line);
+      margin-top: 22px;
+      padding-top: 15px;
+      color: var(--rose);
+      font-size: .76rem;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+    }
+
+    .ideas-progress .ideas-note {
+      color: var(--muted);
+      font-size: .85rem;
+      margin-top: 24px;
     }
   </style>
 </head>
@@ -552,6 +629,7 @@
         <a href="#services">Services</a>
         <a href="#packages">Packages</a>
         <a href="#portfolio">Work</a>
+        <a href="#ideas">Ideas</a>
         <a href="#contact">Contact</a>
       </div>
 
@@ -560,9 +638,9 @@
   </header>
 
   <main>
-    <section class="hero" id="home">
+    <!-- HOME SECTION -->
 
-      <!-- Decorative floral line drawings: welcome section only -->
+    <section class="hero" id="home">
       <div class="floral-art" aria-hidden="true">
         <svg viewBox="0 0 620 680" fill="none"
              xmlns="http://www.w3.org/2000/svg"
@@ -571,11 +649,9 @@
           <g stroke="currentColor" stroke-width="1.5"
              stroke-linecap="round" stroke-linejoin="round">
 
-            <!-- Main curved stem -->
             <path d="M620 650 C500 560 540 440 455 350
                      C410 300 390 220 425 130" />
 
-            <!-- Upper flower -->
             <path d="M425 130
                      C397 105 370 111 372 132
                      C374 151 400 151 425 130Z" />
@@ -593,24 +669,20 @@
                      C399 114 414 122 425 130Z" />
             <circle cx="425" cy="132" r="8" />
 
-            <!-- Left leaf -->
             <path d="M475 365
                      C423 360 396 325 400 296
                      C445 305 472 330 475 365Z" />
             <path d="M405 302 C429 323 449 343 475 365" />
 
-            <!-- Right leaf -->
             <path d="M495 430
                      C538 390 578 399 591 420
                      C559 449 527 448 495 430Z" />
             <path d="M495 430 C532 426 558 422 591 420" />
 
-            <!-- Lower flower stem -->
             <path d="M455 350
                      C380 365 350 426 320 485
                      C295 535 262 565 215 595" />
 
-            <!-- Lower flower -->
             <path d="M215 595
                      C186 578 187 552 207 552
                      C227 553 228 579 215 595Z" />
@@ -628,7 +700,6 @@
                      C198 568 208 584 215 595Z" />
             <circle cx="215" cy="596" r="7" />
 
-            <!-- Decorative side leaves -->
             <path d="M353 423
                      C310 407 290 377 303 354
                      C342 371 357 394 353 423Z" />
@@ -639,7 +710,6 @@
                      C353 524 326 526 306 510Z" />
             <path d="M306 510 C332 506 354 503 377 500" />
 
-            <!-- Fine background sprig -->
             <path d="M590 180 C540 240 550 285 580 320" />
             <path d="M570 216
                      C535 211 523 188 534 173
@@ -649,7 +719,6 @@
                      C595 275 574 274 557 259Z" />
             <path d="M557 259 L614 255" />
 
-            <!-- Small blossom -->
             <path d="M510 540
                      C489 525 493 508 507 510
                      C520 512 519 528 510 540Z" />
@@ -696,6 +765,8 @@
       </div>
     </section>
 
+    <!-- ABOUT SECTION -->
+
     <section id="about">
       <div class="container about-grid">
         <div class="section-intro">
@@ -727,6 +798,8 @@
         </div>
       </div>
     </section>
+
+    <!-- SERVICES SECTION -->
 
     <section id="services">
       <div class="container">
@@ -766,6 +839,8 @@
         </div>
       </div>
     </section>
+
+    <!-- PRICING PACKAGES -->
 
     <section id="packages">
       <div class="container">
@@ -833,24 +908,36 @@
       </div>
     </section>
 
+    <!-- PORTFOLIO SECTION WITH IMAGES -->
+
     <section id="portfolio">
       <div class="container">
         <div class="section-intro">
           <p class="eyebrow">Selected work</p>
-          <h2>Ideas in progress.</h2>
+          <h2>Selected work.</h2>
           <p>A growing collection of practice projects and website concepts.</p>
         </div>
 
         <div class="portfolio-grid">
           <article class="project">
-            <div class="project-visual">Personal Portfolio</div>
+            <div class="project-visual">
+              <img
+                src="https://images.unsplash.com/photo-1469334031218-e382a71b716b?auto=format&fit=crop&w=900&q=85"
+                alt="Fashion and personal portfolio inspiration"
+                onerror="this.style.display='none'">
+            </div>
             <h3>My portfolio</h3>
             <p>A personal website to introduce my journey into tech.</p>
             <div class="project-tag">Personal project</div>
           </article>
 
           <article class="project">
-            <div class="project-visual">Beauty & Care</div>
+            <div class="project-visual">
+              <img
+                src="https://images.unsplash.com/photo-1608248543803-ba4f8c70ae0b?auto=format&fit=crop&w=900&q=85"
+                alt="Beauty and skincare products"
+                onerror="this.style.display='none'">
+            </div>
             <h3>Beauty brand concept</h3>
             <p>
               A visual concept for a beauty business with an
@@ -860,7 +947,12 @@
           </article>
 
           <article class="project">
-            <div class="project-visual">Small Business</div>
+            <div class="project-visual">
+              <img
+                src="https://images.unsplash.com/photo-1546069901-ba9599a7e63c?auto=format&fit=crop&w=900&q=85"
+                alt="Fresh food and small business inspiration"
+                onerror="this.style.display='none'">
+            </div>
             <h3>Business website concept</h3>
             <p>
               A simple concept showing how a small business
@@ -875,6 +967,70 @@
         </p>
       </div>
     </section>
+
+    <!-- IDEAS IN PROGRESS -->
+
+    <section id="ideas" class="ideas-progress">
+      <div class="container">
+        <div class="section-intro">
+          <p class="eyebrow">The creative process</p>
+          <h2>Ideas in Progress.</h2>
+          <p>
+            Every great website starts with an idea. These are
+            concepts I'm exploring as I grow my skills and create
+            new digital experiences.
+          </p>
+        </div>
+
+        <div class="ideas-grid">
+          <article class="idea-card">
+            <div class="idea-content">
+              <p class="idea-number">01 / CONCEPT</p>
+              <span class="idea-status">In progress</span>
+              <h3>Beauty &amp; Glow</h3>
+              <p>
+                A refined website concept for a beauty business,
+                featuring services, pricing, and appointment enquiries.
+              </p>
+              <p class="idea-type">Beauty · Wellness · Services</p>
+            </div>
+          </article>
+
+          <article class="idea-card">
+            <div class="idea-content">
+              <p class="idea-number">02 / CONCEPT</p>
+              <span class="idea-status">Planning</span>
+              <h3>The Nude Edit</h3>
+              <p>
+                A modern boutique concept with an elegant layout,
+                curated product collections, and a luxury-inspired feel.
+              </p>
+              <p class="idea-type">Fashion · Retail · E-commerce</p>
+            </div>
+          </article>
+
+          <article class="idea-card">
+            <div class="idea-content">
+              <p class="idea-number">03 / CONCEPT</p>
+              <span class="idea-status">Coming soon</span>
+              <h3>The Perfect Plate</h3>
+              <p>
+                A welcoming catering website concept with menu
+                highlights, event packages, and an easy way for
+                customers to enquire.
+              </p>
+              <p class="idea-type">Food · Catering · Events</p>
+            </div>
+          </article>
+        </div>
+
+        <p class="ideas-note">
+          These are developing concepts, not completed client projects.
+        </p>
+      </div>
+    </section>
+
+    <!-- CONTACT SECTION -->
 
     <section id="contact">
       <div class="container contact-grid">
@@ -895,15 +1051,17 @@
           </p>
 
           <div class="contact-buttons">
-            <a class="button"
-               href="mailto:shernoliasagemorgan@gmail.com?subject=Website%20Enquiry">
+            <a
+              class="button"
+              href="mailto:shernoliasagemorgan@gmail.com?subject=Website%20Enquiry">
               Email me ↗
             </a>
 
-            <a class="button"
-               href="https://wa.me/27617912607"
-               target="_blank"
-               rel="noopener noreferrer">
+            <a
+              class="button"
+              href="https://wa.me/27617912607"
+              target="_blank"
+              rel="noopener noreferrer">
               Chat on WhatsApp ↗
             </a>
           </div>
@@ -915,11 +1073,13 @@
                 shernoliasagemorgan@gmail.com
               </a>
             </p>
+
             <p>
               WhatsApp:
-              <a href="https://wa.me/27617912607"
-                 target="_blank"
-                 rel="noopener noreferrer">
+              <a
+                href="https://wa.me/27617912607"
+                target="_blank"
+                rel="noopener noreferrer">
                 061 791 2607
               </a>
             </p>
@@ -928,6 +1088,8 @@
       </div>
     </section>
   </main>
+
+  <!-- FOOTER -->
 
   <footer>
     <div class="container footer-inner">
