@@ -4,7 +4,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Shernolia creates thoughtful, elegant websites for individuals and small businesses.">
+  <meta name="description" content="I creates thoughtful, elegant websites for individuals and small businesses.">
   <meta name="theme-color" content="#faf6f1">
 
   <title>Shernolia | Web Design & Development</title>
@@ -14,15 +14,18 @@
   <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,500;0,600;1,500&display=swap" rel="stylesheet">
 
   <style>
-    :root {
-      --cream: #faf6f1;
-      --nude: #eee1d6;
-      --rose: #b7837c;
-      --brown: #49372f;
-      --dark: #302723;
-      --muted: #796c64;
-      --white: #fffdfb;
-      --line: #e6d8ce;
+   
+:root {
+  --cream: #F3E5D8;
+  --nude: #F7B7CF;
+  --rose: #E98BB2;
+  --brown: #171414;
+  --dark: #171414;
+  --muted: #6F5B62;
+  --white: #FFF9FC;
+  --line: #EBC8D7;
+
+}
     }
 
     * {
@@ -385,27 +388,40 @@
       margin-top: auto;
     }
 
-    .project-visual {
-      min-height: 150px;
-      border-radius: 8px;
-      margin-bottom: 18px;
-      background: linear-gradient(135deg, #e6d2c3, #b7837c);
-      display: grid;
-      place-items: center;
-      color: white;
-      font-family: "Playfair Display", serif;
-      font-size: 1.6rem;
-      text-align: center;
-      padding: 15px;
-    }
+  
+.project-visual {
+  min-height: 220px;
+  height: 220px;
+  border-radius: 12px;
+  margin-bottom: 18px;
+  overflow: hidden;
+  background: #F7B7CF;
+  padding: 0;
+}
 
-    .project:nth-child(2) .project-visual {
-      background: linear-gradient(135deg, #d7c7b8, #8f7567);
-    }
 
-    .project:nth-child(3) .project-visual {
-      background: linear-gradient(135deg, #e8ddd0, #c6a7a0);
-    }
+.project-visual {
+  min-height: 220px;
+  height: 220px;
+  border-radius: 12px;
+  margin-bottom: 18px;
+  overflow: hidden;
+  background: #F7B7CF;
+  padding: 0;
+}
+
+.project-visual img {
+  width: 100%;
+  height: 100%;
+  display: block;
+  object-fit: cover;
+  transition: transform 0.4s ease;
+}
+
+.project:hover .project-visual img {
+  transform: scale(1.05);
+}
+
 
     .project-tag {
       color: var(--rose);
@@ -782,7 +798,7 @@
           <article class="package">
             <span class="package-label">01 · The essentials</span>
             <h3>Starter</h3>
-            <div class="price">R850</div>
+            <div class="price">R550</div>
             <p>For a simple first website.</p>
             <ul>
               <li>One-page website</li>
@@ -796,7 +812,7 @@
           <article class="package featured">
             <span class="package-label">02 · Most popular</span>
             <h3>Signature</h3>
-            <div class="price">R1,800</div>
+            <div class="price">R1,500</div>
             <p>For a growing business.</p>
             <ul>
               <li>Up to five pages</li>
@@ -811,7 +827,7 @@
           <article class="package">
             <span class="package-label">03 · The complete look</span>
             <h3>Luxe</h3>
-            <div class="price">R3,500</div>
+            <div class="price">R2,500</div>
             <p>For a more developed online presence.</p>
             <ul>
               <li>Up to eight pages</li>
@@ -843,24 +859,35 @@
 
         <div class="portfolio-grid">
           <article class="project">
-            <div class="project-visual">Personal Portfolio</div>
-            <h3>My portfolio</h3>
-            <p>A personal website to introduce my journey into tech.</p>
-            <div class="project-tag">Personal project</div>
+           
+<div class="idea-visual">
+  <img
+    src="https://images.unsplash.com/photo-1483985988355-763728e1935b?auto=format&fit=crop&w=800&q=85"
+    alt="Fashion and styling inspiration"
+    loading="lazy">
+</div>
+
           </article>
 
           <article class="project">
-            <div class="project-visual">Beauty & Care</div>
-            <h3>Beauty brand concept</h3>
-            <p>
-              A visual concept for a beauty business with an
-              elegant online presence.
-            </p>
-            <div class="project-tag">Design concept</div>
+           
+<div class="idea-visual">
+  <img
+    src="https://images.unsplash.com/photo-1608248543803-ba4f8c70ae0b?auto=format&fit=crop&w=800&q=85"
+    alt="Beauty and skincare products"
+    loading="lazy">
+</div>
+
           </article>
 
-          <article class="project">
-            <div class="project-visual">Small Business</div>
+         
+<div class="idea-visual">
+  <img
+    src="https://images.unsplash.com/photo-1546069901-ba9599a7e63c?auto=format&fit=crop&w=800&q=85"
+    alt="Beautifully presented fresh food"
+    loading="lazy">
+</div>
+
             <h3>Business website concept</h3>
             <p>
               A simple concept showing how a small business
