@@ -385,26 +385,16 @@
       margin-top: auto;
     }
 
+    
     .project-visual {
-      min-height: 150px;
+      display: block;
+      width: 100%;
+      height: 200px;
+      object-fit: cover;
+      object-position: center;
       border-radius: 8px;
       margin-bottom: 18px;
-      background: linear-gradient(135deg, #e6d2c3, #b7837c);
-      display: grid;
-      place-items: center;
-      color: white;
-      font-family: "Playfair Display", serif;
-      font-size: 1.6rem;
-      text-align: center;
-      padding: 15px;
-    }
-
-    .project:nth-child(2) .project-visual {
-      background: linear-gradient(135deg, #d7c7b8, #8f7567);
-    }
-
-    .project:nth-child(3) .project-visual {
-      background: linear-gradient(135deg, #e8ddd0, #c6a7a0);
+      background: var(--nude);
     }
 
     .project-tag {
@@ -843,14 +833,11 @@
 
         <div class="portfolio-grid">
           <article class="project">
-            <div class="project-visual">Personal Portfolio</div>
             <h3>My portfolio</h3>
             <p>A personal website to introduce my journey into tech.</p>
             <div class="project-tag">Personal project</div>
           </article>
 
-          <article class="project">
-            <div class="project-visual">Beauty & Care</div>
             <h3>Beauty brand concept</h3>
             <p>
               A visual concept for a beauty business with an
@@ -859,8 +846,6 @@
             <div class="project-tag">Design concept</div>
           </article>
 
-          <article class="project">
-            <div class="project-visual">Small Business</div>
             <h3>Business website concept</h3>
             <p>
               A simple concept showing how a small business
